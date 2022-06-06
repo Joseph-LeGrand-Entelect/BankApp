@@ -1,8 +1,6 @@
-﻿using Bank.Domain;
-
-namespace Bank.Domain
+﻿namespace Bank.Domain.CheckingAccount
 {
-    public class CheckingAccount : Account
+    public class CheckingAccount : Account.Account
     {
         private double TransactionFee { get; set; }
         

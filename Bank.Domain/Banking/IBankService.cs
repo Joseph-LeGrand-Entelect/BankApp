@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace Bank.Domain.Interface
+﻿namespace Bank.Domain.Banking
 {
     public interface IBankService
     {

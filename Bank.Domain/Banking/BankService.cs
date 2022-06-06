@@ -1,8 +1,7 @@
 ﻿using Bank.Core.Model;
-using Bank.Domain.Interface;
 using Newtonsoft.Json;
 
-namespace Bank.Domain.Service
+namespace Bank.Domain.Banking
 {
     public class BankService : IBankService
     {
