@@ -1,20 +1,6 @@
-﻿# Default ignored files
-/shelf/
-/workspace.xml
-# Rider ignored files
-/contentModel.xml
-/modules.xml
-/.idea.BankApp.iml
-/projectSettingsUpdater.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
-
-
-# Created by https://www.toptal.com/developers/gitignore/api/csharp
-# Edit at https://www.toptal.com/developers/gitignore?templates=csharp
+﻿
+# Created by https://www.toptal.com/developers/gitignore/api/dotnetcore,csharp
+# Edit at https://www.toptal.com/developers/gitignore?templates=dotnetcore,csharp
 
 ### Csharp ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -414,4 +400,13 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# End of https://www.toptal.com/developers/gitignore/api/csharp
+### DotnetCore ###
+# .NET Core build folders
+bin/
+obj/
+
+# Common node modules locations
+/node_modules
+/wwwroot/node_modules
+
+# End of https://www.toptal.com/developers/gitignore/api/dotnetcore,csharp
