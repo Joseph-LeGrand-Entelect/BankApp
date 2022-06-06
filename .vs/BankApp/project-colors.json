@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a9119871-8bff-4077-bec7-f7d2c8de4349": {
+      "ProjectGuid": "a9119871-8bff-4077-bec7-f7d2c8de4349",
+      "DisplayName": "BankApp",
+      "ColorIndex": 0
+    },
+    "d2560a7f-0607-4d30-bd4d-322da696934f": {
+      "ProjectGuid": "d2560a7f-0607-4d30-bd4d-322da696934f",
+      "DisplayName": "Bank.Domain",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
