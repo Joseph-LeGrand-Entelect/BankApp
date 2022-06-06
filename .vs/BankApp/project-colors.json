@@ -1,16 +1,36 @@
 {
   "Version": 1,
   "ProjectMap": {
+    "a1aaf1ab-02a1-4cec-8a58-5faceac58146": {
+      "ProjectGuid": "a1aaf1ab-02a1-4cec-8a58-5faceac58146",
+      "DisplayName": "Bank.Domain",
+      "ColorIndex": 0
+    },
+    "9e32c9ee-4900-40fb-9525-b54ad30e7fb8": {
+      "ProjectGuid": "9e32c9ee-4900-40fb-9525-b54ad30e7fb8",
+      "DisplayName": "Bank.Core",
+      "ColorIndex": 1
+    },
     "a9119871-8bff-4077-bec7-f7d2c8de4349": {
       "ProjectGuid": "a9119871-8bff-4077-bec7-f7d2c8de4349",
       "DisplayName": "BankApp",
-      "ColorIndex": 0
+      "ColorIndex": 2
     },
-    "d2560a7f-0607-4d30-bd4d-322da696934f": {
-      "ProjectGuid": "d2560a7f-0607-4d30-bd4d-322da696934f",
-      "DisplayName": "Bank.Domain",
-      "ColorIndex": 1
+    "c4617b79-650e-4d18-9b08-d09dce12c186": {
+      "ProjectGuid": "c4617b79-650e-4d18-9b08-d09dce12c186",
+      "DisplayName": "Bank.Interface",
+      "ColorIndex": 3
+    },
+    "78cb3b3f-0581-4425-980a-20096d95da5a": {
+      "ProjectGuid": "78cb3b3f-0581-4425-980a-20096d95da5a",
+      "DisplayName": "Bank.Presentation",
+      "ColorIndex": 4
+    },
+    "fe3f5efa-21aa-4f18-b17d-c5c982a90d1c": {
+      "ProjectGuid": "fe3f5efa-21aa-4f18-b17d-c5c982a90d1c",
+      "DisplayName": "Bank.Admin",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 6
 }
