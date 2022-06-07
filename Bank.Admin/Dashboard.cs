@@ -18,7 +18,7 @@ namespace Bank.Admin
     {
 
         string customerName = "Mr. Bryan Walton";
-        int balance = 78620;
+        double balance = 78620;
         double interestRate;
         double transactionFee;
         BankService service = new BankService();
@@ -76,6 +76,7 @@ namespace Bank.Admin
 
                 double excessWithdraw = double.Parse(textBox1.Text);
                 account.Withdraw(excessWithdraw);
+                balance = account.Balance;
                 label2.Text = "Your balance is R" + account.Balance.ToString();
             }
             catch(Exception eo)
@@ -93,6 +94,7 @@ namespace Bank.Admin
 
                 double excessWithdraw = double.Parse(textBox2.Text);
                 account.Deposit(excessWithdraw);
+                balance = account.Balance;
                 label2.Text = "Your balance is R" + account.Balance.ToString();
             }
             catch (Exception eo)
