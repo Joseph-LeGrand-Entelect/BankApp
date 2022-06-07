@@ -21,7 +21,7 @@ namespace Bank.Domain.Account
         {
             if (amount < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(amount));
+                throw new Exception("We can't be owing you money, please deposit a positive amount");
             }
             Balance += amount;
         }
@@ -31,12 +31,12 @@ namespace Bank.Domain.Account
         {
             if (amount > Balance)
             {
-                throw new ArgumentOutOfRangeException(nameof(amount));
+                throw new Exception("You wish you had that much money in your account, please enter an amount less than or equal your balance");
             }
 
             if (amount < 0)
             {
-                throw new ArgumentOutOfRangeException(nameof(amount));
+                throw new Exception("Are you depositing or widthrawing please decide");
             }
             Balance -= amount;
         }

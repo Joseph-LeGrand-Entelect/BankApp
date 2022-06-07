@@ -27,8 +27,7 @@ namespace Bank.Admin
         {
 
             InitializeComponent();
-            interestRate = service.GetInterestRate().Result;
-            transactionFee = service.GetTransactionFee().Result;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,24 +38,68 @@ namespace Bank.Admin
             //var interestRate = service.GetInterestRate().Result;
             //var transactionFee = service.GetTransactionFee().Result;
 
+
+
+            //interestRate = service.GetInterestRate().Result;
+            //transactionFee = service.GetTransactionFee().Result;
             //Acounts
             var account = new Account(customerName, balance);
-            var checkingAccount = new CheckingAccount(customerName, balance, transactionFee);
-            var savingsAccount = new SavingsAccount(customerName, balance, interestRate);
+            //var checkingAccount = new CheckingAccount(customerName, balance, transactionFee);
+            //var savingsAccount = new SavingsAccount(customerName, balance, interestRate);
+            label2.Text = "Your balance is R" + account.Balance.ToString();
+            //Console.WriteLine("Interest earned: ${0}", savingsAccount.CalculateInterestEarned());
 
-            Console.WriteLine("Interest earned: ${0}", savingsAccount.CalculateInterestEarned());
+            //account.Deposit(5.77);
+            //account.Withdraw(11.22);
+            //Console.WriteLine("Current balance is ${0}", account.Balance);
+            //Console.WriteLine("");
 
-            account.Deposit(5.77);
-            account.Withdraw(11.22);
-            Console.WriteLine("Current balance is ${0}", account.Balance);
-            Console.WriteLine("");
+            //// Test withdraw amount exceeds balance
+            //double excessWithdraw = 1000;
+            //account.Withdraw(excessWithdraw);
+            //Console.WriteLine("Try to withdraw {0:C} from account. Unchanged balance is {1:C}",
+            //    excessWithdraw, account.Balance);
+            //Console.WriteLine("");
+        }
 
-            // Test withdraw amount exceeds balance
-            double excessWithdraw = 1000;
-            account.Withdraw(excessWithdraw);
-            Console.WriteLine("Try to withdraw {0:C} from account. Unchanged balance is {1:C}",
-                excessWithdraw, account.Balance);
-            Console.WriteLine("");
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                var account = new Account(customerName, balance);
+
+                double excessWithdraw = double.Parse(textBox1.Text);
+                account.Withdraw(excessWithdraw);
+                label2.Text = "Your balance is R" + account.Balance.ToString();
+            }
+            catch(Exception eo)
+            {
+                MessageBox.Show(eo.Message);
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var account = new Account(customerName, balance);
+
+                double excessWithdraw = double.Parse(textBox2.Text);
+                account.Deposit(excessWithdraw);
+                label2.Text = "Your balance is R" + account.Balance.ToString();
+            }
+            catch (Exception eo)
+            {
+                MessageBox.Show(eo.Message);
+            }
+
         }
     }
 }
