@@ -1,4 +1,6 @@
-﻿namespace Bank.Domain.Account
+﻿using System;
+
+namespace Bank.Domain.Account
 {
     public class Account
     {

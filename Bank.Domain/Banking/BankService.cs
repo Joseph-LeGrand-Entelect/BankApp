@@ -1,5 +1,8 @@
 ﻿using Bank.Core.Model;
 using Newtonsoft.Json;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace Bank.Domain.Banking
 {

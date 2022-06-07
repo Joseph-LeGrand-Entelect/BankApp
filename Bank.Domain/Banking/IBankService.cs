@@ -1,4 +1,6 @@
-﻿namespace Bank.Domain.Banking
+﻿using System.Threading.Tasks;
+
+namespace Bank.Domain.Banking
 {
     public interface IBankService
     {

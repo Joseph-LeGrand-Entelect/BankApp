@@ -1,23 +1,31 @@
-using Bank.Domain;
-using Bank.Domain.Account;
+﻿using Bank.Domain.Account;
 using Bank.Domain.Banking;
 using Bank.Domain.CheckingAccount;
 using Bank.Domain.SavingsAccount;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bank.Admin
 {
-    public partial class ATM : Form
+    public partial class Dashboard : Form
     {
+
         string customerName = "Mr. Bryan Walton";
         int balance = 78620;
-        BankService service = new BankService();
         double interestRate;
         double transactionFee;
+        BankService service = new BankService();
 
-        public ATM()
+        public Dashboard()
         {
+
             InitializeComponent();
             interestRate = service.GetInterestRate().Result;
             transactionFee = service.GetTransactionFee().Result;

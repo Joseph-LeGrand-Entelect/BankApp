@@ -1,4 +1,6 @@
-﻿namespace Bank.Admin
+﻿using System.Windows.Forms;
+
+namespace Bank.Admin
 {
     partial class ATM
     {
