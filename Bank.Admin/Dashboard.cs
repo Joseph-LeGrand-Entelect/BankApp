@@ -44,8 +44,8 @@ namespace Bank.Admin
             //transactionFee = service.GetTransactionFee().Result;
             //Acounts
             var account = new Account(customerName, balance);
-            //var checkingAccount = new CheckingAccount(customerName, balance, transactionFee);
-            //var savingsAccount = new SavingsAccount(customerName, balance, interestRate);
+            var checkingAccount = new CheckingAccount(customerName, balance);
+            var savingsAccount = new SavingsAccount(customerName, balance);
             label2.Text = "Your balance is R" + account.Balance.ToString();
             //Console.WriteLine("Interest earned: ${0}", savingsAccount.CalculateInterestEarned());
 

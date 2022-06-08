@@ -1,4 +1,5 @@
 ﻿using System;
+using Bank.Domain.Banking;
 
 namespace Bank.Domain.Account
 {
@@ -9,11 +10,14 @@ namespace Bank.Domain.Account
         // Declare variable for the account balance
         public string CustomerName { get; set; }
 
+        protected readonly IBankService BankService;
+
         // Constructor
         public Account(string customerName, double balance)
         {
             CustomerName = customerName;
             Balance = balance;
+            BankService = new BankService();
         }
 
         // Increases balance by given amount

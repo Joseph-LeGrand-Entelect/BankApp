@@ -4,9 +4,9 @@
     {
         private double TransactionFee { get; set; }
         
-        public CheckingAccount(string customerName, double balance, double transactionFee) : base(customerName, balance)
+        public CheckingAccount(string customerName, double balance) : base(customerName, balance)
         {
-            TransactionFee = transactionFee;
+            TransactionFee = BankService.GetTransactionFee();
         }
 
         // Increases balance by given amount minus fee
