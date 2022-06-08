@@ -1,15 +1,6 @@
 ﻿using Bank.Domain.Account;
 using Bank.Domain.Banking;
-using Bank.Domain.CheckingAccount;
-using Bank.Domain.SavingsAccount;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Bank.Admin
@@ -21,12 +12,13 @@ namespace Bank.Admin
         double balance = 78620;
         double interestRate;
         double transactionFee;
-        BankService service = new BankService();
+        BankService service;
 
         public Dashboard()
         {
 
             InitializeComponent();
+            service = new BankService();
 
         }
 
@@ -43,9 +35,9 @@ namespace Bank.Admin
             //interestRate = service.GetInterestRate().Result;
             //transactionFee = service.GetTransactionFee().Result;
             //Acounts
-            var account = new Account(customerName, balance);
-            var checkingAccount = new CheckingAccount(customerName, balance);
-            var savingsAccount = new SavingsAccount(customerName, balance);
+            var account = new Account(customerName, balance, service);
+            //var checkingAccount = new CheckingAccount(customerName, balance, service);
+            //var savingsAccount = new SavingsAccount(customerName, balance, service);
             label2.Text = "Your balance is R" + account.Balance.ToString();
             //Console.WriteLine("Interest earned: ${0}", savingsAccount.CalculateInterestEarned());
 
@@ -72,7 +64,7 @@ namespace Bank.Admin
 
             try
             {
-                var account = new Account(customerName, balance);
+                var account = new Account(customerName, balance, service);
 
                 double excessWithdraw = double.Parse(textBox1.Text);
                 account.Withdraw(excessWithdraw);
@@ -90,7 +82,7 @@ namespace Bank.Admin
         {
             try
             {
-                var account = new Account(customerName, balance);
+                var account = new Account(customerName, balance, service);
 
                 double excessWithdraw = double.Parse(textBox2.Text);
                 account.Deposit(excessWithdraw);

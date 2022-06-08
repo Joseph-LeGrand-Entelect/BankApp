@@ -10,14 +10,14 @@ namespace Bank.Domain.Account
         // Declare variable for the account balance
         public string CustomerName { get; set; }
 
-        protected readonly IBankService BankService;
+        public IBankService BankService  { get; set; }
 
         // Constructor
-        public Account(string customerName, double balance)
+        public Account(string customerName, double balance, IBankService service)
         {
             CustomerName = customerName;
             Balance = balance;
-            BankService = new BankService();
+            BankService = service;
         }
 
         // Increases balance by given amount
@@ -25,7 +25,7 @@ namespace Bank.Domain.Account
         {
             if (amount < 0)
             {
-                throw new Exception("We can't be owing you money, please deposit a positive amount");
+                throw new Exception("We can't be owing you money, please deposit an amount above transaction fee");
             }
             Balance += amount;
         }

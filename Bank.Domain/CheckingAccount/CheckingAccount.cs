@@ -1,17 +1,21 @@
-﻿namespace Bank.Domain.CheckingAccount
+﻿using Bank.Domain.Banking;
+
+namespace Bank.Domain.CheckingAccount
 {
     public class CheckingAccount : Account.Account
     {
         private double TransactionFee { get; set; }
         
-        public CheckingAccount(string customerName, double balance) : base(customerName, balance)
+        public CheckingAccount(string customerName, double balance, IBankService service) : base(customerName, balance, service)
         {
-            TransactionFee = BankService.GetTransactionFee();
+            TransactionFee = service.GetTransactionFee();
         }
 
         // Increases balance by given amount minus fee
         public override void Deposit(double amount)
         {
+            //Do not delete, for demo purpose
+            //TransactionFee = BankService.GetTransactionFee(); 
             base.Deposit(amount - TransactionFee);
         }
 

@@ -1,13 +1,13 @@
-﻿
+﻿using Bank.Domain.Banking;
 
 namespace Bank.Domain.SavingsAccount
 {
     public class SavingsAccount : Account.Account
     {
         private double InterestRate { get; set; }
-        public SavingsAccount(string customerName, double balance) : base(customerName, balance)
+        public SavingsAccount(string customerName, double balance, IBankService service) : base(customerName, balance, service)
         {
-            InterestRate = BankService.GetInterestRate();
+            InterestRate = service.GetInterestRate();
         }
         
         // Returns the amount earned for "this" saving account
