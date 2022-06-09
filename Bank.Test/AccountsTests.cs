@@ -21,7 +21,7 @@ namespace Bank.Test
         }
         
         [Test]
-        public void WhenAmountIsLessThanZero_ShouldThrowException()
+        public void Withdraw_WhenAmountIsLessThanZero_ShouldThrowException()
         {
             // Arrange
             const double beginningBalance = 11.99;

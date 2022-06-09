@@ -7,6 +7,7 @@ namespace Bank.Test
     public class CheckingAccountTests: BaseTests
     {
         [TestCase(1100.99, 4.55, 971.44)]
+        [Repeat(10)]
         public void Withdraw_WithValidAmount_UpdatesBalance(double beginningBalance, double withdrawalAmount, double expected)
         {
             // Arrange

@@ -10,17 +10,33 @@ namespace Bank.Test
     public class BaseTests
     {
         protected Mock<IBankService> BankServiceMock;
-        private IBankService _bankService;
+        protected IBankService BankService;
         protected CheckingAccount CheckingAccount;
         protected Account Account;
         protected CheckingAccount CheckingAccountMock;
 
         private const string CustomerName = "Mrs Jackson";
+        
+        [OneTimeSetUp]
+        public void OneTimeSetUp()
+        {
+            // Code here would be executed only once before the first test.
+            BankService = new BankService();
+            Account = new Account(CustomerName, 0.0, BankService);
+            CheckingAccount = new CheckingAccount(CustomerName, 0.0, BankService);
+            
+            //Mocks
+            BankServiceMock = new Mock<IBankService>();
+            BankServiceMock.Setup(service => service.GetInterestRate()).Returns(0);
+            BankServiceMock.Setup(service => service.GetTransactionFee()).Returns(0);
+            CheckingAccountMock = new CheckingAccount(CustomerName, 0.0, BankServiceMock.Object);
+
+        }
 
         [SetUp]
         public void Setup()
         {
-            _bankService = new BankService();
+            /*_bankService = new BankService();
             Account = new Account(CustomerName, 0.0, _bankService);
             CheckingAccount = new CheckingAccount(CustomerName, 0.0, _bankService);
             
@@ -28,15 +44,22 @@ namespace Bank.Test
             BankServiceMock = new Mock<IBankService>();
             BankServiceMock.Setup(service => service.GetInterestRate()).Returns(0);
             BankServiceMock.Setup(service => service.GetTransactionFee()).Returns(0);
-            CheckingAccountMock = new CheckingAccount(CustomerName, 0.0, BankServiceMock.Object);
-          
+            CheckingAccountMock = new CheckingAccount(CustomerName, 0.0, BankServiceMock.Object);*/
         }
         
         [TearDown]
         public void TearDown()
         {
+            /*BankServiceMock = null;
+            _bankService = null;*/
+        }
+        
+        [OneTimeTearDown]
+        public void OneTimeTearDown()
+        {
+            // Code here would be executed only once after the last test.
             BankServiceMock = null;
-            _bankService = null;
+            BankService = null;
         }
     }
 }
